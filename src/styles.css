@@ -1,1 +1,6 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
+
+.deck-img{
+    width: 50%;
+    height: 50%;
+}
