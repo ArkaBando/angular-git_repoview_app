@@ -14,6 +14,7 @@ export class RepositoryViewComponent implements OnInit {
 
   title = 'app';
   searchText = "ArkaBando";
+  url = "viewUserDetails/";
   private repositoryItems : Array<ItemVO>;
   
   ngOnInit() {

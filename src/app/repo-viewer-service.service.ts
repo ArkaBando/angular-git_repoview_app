@@ -8,9 +8,11 @@ import 'rxjs/add/operator/map';
 export class RepoViewerServiceService {
   private repositoryItems : Array<ItemVO>;
   private url : string ;
+  private userDetailUrl:string;
   constructor (
     private http: Http
   ) {
+    this.userDetailUrl = "https://api.github.com/users/";
     this.url = "https://api.github.com/search/users?q=";
     this.repositoryItems = [];
   }
@@ -21,6 +23,16 @@ export class RepoViewerServiceService {
   getUsersByRepositoryName(repositoryName:String){
    
     return this.http.get(this.url+repositoryName)
+    .map((res:Response) => res.json());
+  }
+
+  getUserDetailsByLoginName(loginName:String){
+    return this.http.get(this.userDetailUrl+loginName)
+    .map((res:Response) => res.json());
+  }
+
+  getUserRepositoryDetailsForUser(loginName:String){
+    return this.http.get(this.userDetailUrl+loginName+"/repos")
     .map((res:Response) => res.json());
   }
 
