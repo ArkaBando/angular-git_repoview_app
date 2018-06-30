@@ -8,9 +8,9 @@ import { RepoViewerServiceService } from './../repo-viewer-service.service'
   styleUrls: ['./user-details.component.css']
 })
 export class UserDetailsComponent implements OnInit {
-  private userId: string;
-  private repositoryItems : Array<any>;
-  private userDetails : any;
+  userId: string;
+  repositoryItems : Array<any>;
+  userDetails : any;
   constructor(route: ActivatedRoute, private repoViewerServiceService : RepoViewerServiceService) {
     this.userId = route.snapshot.params['id'];
    }
