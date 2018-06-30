@@ -16,6 +16,25 @@ export class UserDetailsComponent implements OnInit {
    }
 
   ngOnInit() {
+    this.repoViewerServiceService.getUserDetailsByLoginName(this.userId).subscribe(
+      data =>{
+        console.log("user Details");
+        console.log(data);
+        this.userDetails = data;
+      }
+    );
+
+    this.repositoryItems = [];
+    this.repoViewerServiceService.getUserRepositoryDetailsForUser(this.userId).subscribe(
+      data =>{
+        console.log("repositoryDetails");
+        console.log(data);
+        data.forEach(element => {
+          this.repositoryItems.push(element);
+        });
+        console.log(this.repositoryItems);
+      }
+    );
   }
 
   public setUserDetails():void{

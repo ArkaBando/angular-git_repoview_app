@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Http, Response } from '@angular/http';
+import { ActivatedRoute, Router} from '@angular/router';
 import { RepoViewerServiceService } from './../repo-viewer-service.service';
 import { ItemVO } from './../model/ItemVO';
 import { RepositoryItem } from './../model/repository-item';
@@ -20,7 +21,8 @@ export class RepositoryViewComponent implements OnInit {
   ngOnInit() {
   }
 
-  constructor(private repoViewerServiceService : RepoViewerServiceService) { }
+  constructor(private repoViewerServiceService : RepoViewerServiceService,
+  private router : Router) { }
   //  ngOnInit() {
   //   // this.repositoryItems = [];
   //   this.repositoryItems = this.repoViewerServiceService.getUsersByRepository("tom");
@@ -31,6 +33,10 @@ export class RepositoryViewComponent implements OnInit {
   //     // this.http.get("https://api.github.com/search/users?q=tom").
   //     // map((response:Response) ⇒ response.json())
       
+  //  }
+
+  //  goToUserDetail(){
+  //    this.router.
   //  }
 
    showItems():void{
