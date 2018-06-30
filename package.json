@@ -2,6 +2,7 @@
   "name": "github-repository-viewer-app",
   "version": "1.0.0",
   "license": "MIT",
+  "angular-cli": {},
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
@@ -9,7 +10,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "ng build --aot --prod"
+    "postinstall": "ng build --target=production -e ${NODE_ENV:-production} --aot"
   },
   "private": true,
   "dependencies": {
